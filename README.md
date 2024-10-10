@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Wizarding World Character Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **Wizarding World Character Manager** built with React, enabling users to manage and view characters from the magical world. Users can view all characters, filter them by house, add new characters, and maintain a list of their favorite characters.
 
-## Available Scripts
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Character List View**: View all characters, search by name, and filter by house (Gryffindor, Slytherin, Hufflepuff, Ravenclaw).
+- **Add New Character**: Add new characters to the database by filling out a form with the character's name, house, and image URL.
+- **Favorite Characters**: Manage a list of favorite characters by adding or removing them from the favorites page.
+- **Responsive Design**: Built with a flexible grid layout that adapts to different screen sizes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run this project locally, follow these steps:
 
-### `npm test`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/wizarding-world-character-manager.git
+   cd wizarding-world-character-manager
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Start the development server**:
+   ```bash
+   npm start
+   ```
+   This will start the server and open the app in your browser at `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Backend server**: 
+   The app interacts with a local JSON server, which should be running on port `3000`. You can set it up using:
+   ```bash
+   npm install -g json-server
+   json-server --watch db.json --port 3000
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once the app is running, you can:
 
-### `npm run eject`
+- **View all characters**: Visit the homepage to see all characters. You can use the search bar to filter by name and use the dropdown menu to filter by house.
+- **Add a new character**: Navigate to `/add-character` and fill in the form with the character's details (name, house, image URL).
+- **Favorite characters**: Visit `/favorites` to view characters you've added to your favorites. You can add a character to favorites from the character list.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── components/
+│   ├── CharacterCard.js       # Displays individual character details
+│   ├── NavBar.js              # Navigation bar for routing between pages
+│   ├── AddCharacterForm.js    # Form for adding a new character
+│   └── FavoriteCharacterCard.js # Displays individual favorite characters
+├── pages/
+│   ├── CharacterList.js       # Main page to display all characters with filters
+│   ├── FavoriteCharacters.js  # Page displaying the list of favorite characters
+│   ├── ErrorPage.js           # Error page displayed when a route fails
+├── routes/
+│   └── routes.js              # Contains the app's routing logic
+├── App.js                     # Main app component
+├── index.js                   # Entry point for the app
+└── theme.css                  # Styling for the app
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### API Endpoints:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `GET /characters`: Fetch all characters.
+- `POST /characters`: Add a new character.
+- `GET /favorites`: Fetch all favorite characters.
+- `POST /favorites`: Add a character to favorites.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request with your changes. We appreciate any contributions!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
